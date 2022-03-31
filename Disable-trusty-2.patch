@@ -1,0 +1,44 @@
+From f6926ada175adc7650b9c1516ae080ca35e1cdc5 Mon Sep 17 00:00:00 2001
+From: "Suresh, Prashanth" <prashanth.suresh@intel.com>
+Date: Wed, 29 Dec 2021 12:28:14 +0530
+Subject: [PATCH] Disable trusty in CVTE
+
+Disable trusty as it is currently not needed
+
+Signed-off-by: Suresh, Prashanth <prashanth.suresh@intel.com>
+---
+ .../0001-Disable-trusty-in-CVTE.patch         | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+ create mode 100644 bsp_diff/caas/hardware/intel/kernelflinger/0001-Disable-trusty-in-CVTE.patch
+
+diff --git a/bsp_diff/caas/hardware/intel/kernelflinger/0001-Disable-trusty-in-CVTE.patch b/bsp_diff/caas/hardware/intel/kernelflinger/0001-Disable-trusty-in-CVTE.patch
+new file mode 100644
+index 000000000..a8a1ee3b9
+--- /dev/null
++++ b/bsp_diff/caas/hardware/intel/kernelflinger/0001-Disable-trusty-in-CVTE.patch
+@@ -0,0 +1,26 @@
++From c6a6884615fd6315bf5c3ab297b6a1f11a9f03b0 Mon Sep 17 00:00:00 2001
++From: "Suresh, Prashanth" <prashanth.suresh@intel.com>
++Date: Wed, 29 Dec 2021 12:24:43 +0530
++Subject: [PATCH] Disable trusty in CVTE
++
++Disable trusty as it is not needed in CVTE currently
++
++Signed-off-by: Suresh, Prashanth <prashanth.suresh@intel.com>
++
++diff --git a/Android.mk b/Android.mk
++index 81d44c4..6e1e394 100644
++--- a/Android.mk
+++++ b/Android.mk
++@@ -21,7 +21,7 @@ endif
++ 
++ KERNELFLINGER_CFLAGS += -DAVB_AB_I_UNDERSTAND_LIBAVB_AB_IS_DEPRECATED
++ 
++-TARGET_USE_TPM := true
+++TARGET_USE_TPM := false
++ 
++ ifeq ($(TARGET_UEFI_ARCH),x86_64)
++     KERNELFLINGER_CFLAGS += -D__STDC_VERSION__=199901L
++-- 
++2.34.1
++
