@@ -1,4 +1,3 @@
-
 diff --git a/bsp_diff/caas/hardware/intel/kernelflinger/0001-Disable-trusty-in-CVTE.patch b/bsp_diff/caas/hardware/intel/kernelflinger/0001-Disable-trusty-in-CVTE.patch
 new file mode 100644
 index 000000000..a8a1ee3b9
